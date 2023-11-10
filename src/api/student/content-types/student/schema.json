@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Student",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stu_name": {
+      "type": "string"
+    },
+    "stu_surname": {
+      "type": "string"
+    },
+    "stu_email": {
+      "type": "email"
+    },
+    "stu_year": {
+      "type": "integer"
+    }
+  }
+}
