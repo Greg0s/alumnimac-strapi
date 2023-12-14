@@ -12,17 +12,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "stu_name": {
+    "first_name": {
       "type": "string"
     },
-    "stu_surname": {
+    "last_name": {
       "type": "string"
     },
-    "stu_email": {
-      "type": "email"
-    },
-    "stu_year": {
+    "graduation_year": {
       "type": "integer"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "student"
     }
   }
 }
