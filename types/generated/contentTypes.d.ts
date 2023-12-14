@@ -374,17 +374,27 @@ export interface ApiExperienceExperience extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    exp_title: Attribute.String;
-    exp_type: Attribute.String;
-    exp_description: Attribute.Text;
-    exp_company: Attribute.String;
-    exp_location: Attribute.String;
-    exp_year: Attribute.Integer;
-    student: Attribute.Relation<
+    position: Attribute.String & Attribute.Required;
+    type: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    company: Attribute.String & Attribute.Required;
+    country: Attribute.String & Attribute.Required;
+    author: Attribute.Relation<
       "api::experience.experience",
-      "oneToOne",
-      "api::student.student"
+      "manyToOne",
+      "plugin::users-permissions.user"
     >;
+    start_date: Attribute.Date;
+    end_date: Attribute.Date;
+    duration: Attribute.Integer;
+    work_mode: Attribute.String & Attribute.Required;
+    city: Attribute.String & Attribute.Required;
+    address: Attribute.String;
+    compensation: Attribute.Decimal;
+    domain: Attribute.String & Attribute.Required;
+    ongoing: Attribute.Boolean & Attribute.Required;
+    paid: Attribute.Boolean & Attribute.Required;
+    not_recommended: Attribute.Boolean & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -415,10 +425,14 @@ export interface ApiStudentStudent extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    stu_name: Attribute.String;
-    stu_surname: Attribute.String;
-    stu_email: Attribute.Email;
-    stu_year: Attribute.Integer;
+    first_name: Attribute.String;
+    last_name: Attribute.String;
+    graduation_year: Attribute.Integer;
+    user: Attribute.Relation<
+      "api::student.student",
+      "oneToOne",
+      "plugin::users-permissions.user"
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -693,6 +707,16 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     first_name: Attribute.String;
     last_name: Attribute.String;
     graduation_year: Attribute.Integer;
+    experiences: Attribute.Relation<
+      "plugin::users-permissions.user",
+      "oneToMany",
+      "api::experience.experience"
+    >;
+    student: Attribute.Relation<
+      "plugin::users-permissions.user",
+      "oneToOne",
+      "api::student.student"
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
