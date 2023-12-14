@@ -12,28 +12,69 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "exp_title": {
-      "type": "string"
+    "position": {
+      "type": "string",
+      "required": true
     },
-    "exp_type": {
-      "type": "string"
+    "type": {
+      "type": "string",
+      "required": true
     },
-    "exp_description": {
+    "description": {
       "type": "text"
     },
-    "exp_company": {
-      "type": "string"
+    "company": {
+      "type": "string",
+      "required": true
     },
-    "exp_location": {
-      "type": "string"
+    "country": {
+      "type": "string",
+      "required": true
     },
-    "exp_year": {
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "experiences"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "duration": {
       "type": "integer"
     },
-    "student": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::student.student"
+    "work_mode": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string"
+    },
+    "compensation": {
+      "type": "decimal"
+    },
+    "domain": {
+      "type": "string",
+      "required": true
+    },
+    "ongoing": {
+      "type": "boolean",
+      "required": true
+    },
+    "paid": {
+      "type": "boolean",
+      "required": true
+    },
+    "not_recommended": {
+      "type": "boolean",
+      "required": true
     }
   }
 }
