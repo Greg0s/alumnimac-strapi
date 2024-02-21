@@ -66,10 +66,12 @@
       "configurable": false
     },
     "first_name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "last_name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "graduation_year": {
       "type": "integer"
@@ -79,12 +81,6 @@
       "relation": "oneToMany",
       "target": "api::experience.experience",
       "mappedBy": "author"
-    },
-    "student": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::student.student",
-      "inversedBy": "user"
     }
   }
 }

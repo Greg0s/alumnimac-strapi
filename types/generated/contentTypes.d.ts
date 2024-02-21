@@ -395,6 +395,7 @@ export interface ApiExperienceExperience extends Schema.CollectionType {
     ongoing: Attribute.Boolean & Attribute.Required;
     paid: Attribute.Boolean & Attribute.Required;
     not_recommended: Attribute.Boolean & Attribute.Required;
+    abroad: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -428,11 +429,6 @@ export interface ApiStudentStudent extends Schema.CollectionType {
     first_name: Attribute.String;
     last_name: Attribute.String;
     graduation_year: Attribute.Integer;
-    user: Attribute.Relation<
-      "api::student.student",
-      "oneToOne",
-      "plugin::users-permissions.user"
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -704,18 +700,13 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       "manyToOne",
       "plugin::users-permissions.role"
     >;
-    first_name: Attribute.String;
-    last_name: Attribute.String;
+    first_name: Attribute.String & Attribute.Required;
+    last_name: Attribute.String & Attribute.Required;
     graduation_year: Attribute.Integer;
     experiences: Attribute.Relation<
       "plugin::users-permissions.user",
       "oneToMany",
       "api::experience.experience"
-    >;
-    student: Attribute.Relation<
-      "plugin::users-permissions.user",
-      "oneToOne",
-      "api::student.student"
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
