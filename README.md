@@ -2,7 +2,7 @@
 
 > La plateforme pour parcourir les expériences professionnelles des IMACs
 
-<br> Ce repo contient le back-end du projet.
+Ce repo contient le back-end du projet.
 Retrouvez le repo front-end [ici](https://github.com/Greg0s/alumnimac-reborn/).
 
 ## 🚀 Getting started with Strapi
