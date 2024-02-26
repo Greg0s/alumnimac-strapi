@@ -1,4 +1,11 @@
-# 🚀 Getting started with Strapi
+# <img src="https://i.imgur.com/uJEOx8s.png" alt="Logo AlumnIMAC" width="35" height="auto" margin="auto"> AlumnIMAC
+
+> La plateforme pour parcourir les expériences professionnelles des IMACs
+
+<br> Ce repo contient le back-end du projet.
+Retrouvez le repo front-end [ici](https://github.com/Greg0s/alumnimac-reborn/).
+
+## 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 
@@ -10,6 +17,8 @@ Start your Strapi application with autoReload enabled. [Learn more](https://docs
 npm run develop
 # or
 yarn develop
+# or
+bun develop
 ```
 
 ### `start`
@@ -20,6 +29,8 @@ Start your Strapi application with autoReload disabled. [Learn more](https://doc
 npm run start
 # or
 yarn start
+# or
+bun start
 ```
 
 ### `build`
@@ -30,6 +41,8 @@ Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-
 npm run build
 # or
 yarn build
+# or
+bun build
 ```
 
 ## ⚙️ Deployment
