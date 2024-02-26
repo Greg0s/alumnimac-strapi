@@ -9,11 +9,23 @@ Retrouvez le repo front-end [ici](https://github.com/Greg0s/alumnimac-reborn/).
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 
+### `install`
+
+Install the projet
+
+```bash
+npm i
+# or
+yarn i
+# or
+bun i
+```
+
 ### `develop`
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
-```
+```bash
 npm run develop
 # or
 yarn develop
@@ -25,7 +37,7 @@ bun develop
 
 Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
 
-```
+```bash
 npm run start
 # or
 yarn start
@@ -37,7 +49,7 @@ bun start
 
 Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
 
-```
+```bash
 npm run build
 # or
 yarn build
