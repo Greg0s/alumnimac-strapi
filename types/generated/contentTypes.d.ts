@@ -414,39 +414,6 @@ export interface ApiExperienceExperience extends Schema.CollectionType {
   };
 }
 
-export interface ApiStudentStudent extends Schema.CollectionType {
-  collectionName: "students";
-  info: {
-    singularName: "student";
-    pluralName: "students";
-    displayName: "Student";
-    description: "";
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    first_name: Attribute.String;
-    last_name: Attribute.String;
-    graduation_year: Attribute.Integer;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      "api::student.student",
-      "oneToOne",
-      "admin::user"
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      "api::student.student",
-      "oneToOne",
-      "admin::user"
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: "files";
   info: {
@@ -780,7 +747,6 @@ declare module "@strapi/types" {
       "admin::transfer-token": AdminTransferToken;
       "admin::transfer-token-permission": AdminTransferTokenPermission;
       "api::experience.experience": ApiExperienceExperience;
-      "api::student.student": ApiStudentStudent;
       "plugin::upload.file": PluginUploadFile;
       "plugin::upload.folder": PluginUploadFolder;
       "plugin::i18n.locale": PluginI18NLocale;
